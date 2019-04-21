@@ -2,9 +2,12 @@ let colours = ["rgb(255, 0, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)", "rgb(0, 2
 
 const squares = document.querySelectorAll(".square");
 let winningColour = colours[3];
-let displayColour = document.getElementById('displayColour');
+const displayColour = document.getElementById('displayColour');
+const message = document.getElementById('message');
+
 
 displayColour.textContent = winningColour;
+
 
 for (let i = 0; i < squares.length; i++) {
   // add initial colours to squares
@@ -15,8 +18,9 @@ for (let i = 0; i < squares.length; i++) {
     let clickedColour = this.style.backgroundColor;
     // compare the colour to the chosen colour
     if(clickedColour === winningColour){
-      alert("you win");
+      message.textContent = "Correct";
     } else {
+      message.textContent = "Try Again";
       this.style.backgroundColor = "#232323";
     }
 
