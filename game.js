@@ -1,4 +1,5 @@
-let colours = generateRandomColours(6)
+let numberOfSquares = 6;
+let colours = generateRandomColours(numberOfSquares)
 const squares = document.querySelectorAll('.square');
 let winningColour = pickColour();
 let displayColour = document.getElementById('displayColour');
@@ -13,15 +14,39 @@ displayColour.textContent = winningColour;
 easyButton.addEventListener("click", function(){
   hardButton.classList.remove("selected");
   this.classList.add("selected");
+  numberOfSquares = 3;
+  colours = generateRandomColours(numberOfSquares);
+  winningColour = pickColour();
+  displayColour.textContent = winningColour;
+  for (let i = 0; i < squares.length; i++) {
+    if(colours[i]){
+      squares[i].style.backgroundColor = colours[i];
+    } else {
+      squares[i].style.display = "none";
+    }
+  }
+   h1.style.backgroundColor = "#232323";
+  message.textContent = "";
 })
 
 hardButton.addEventListener("click", function(){
   easyButton.classList.remove("selected");
   this.classList.add("selected");
+  numberOfSquares = 6;
+  colours = generateRandomColours(numberOfSquares);
+  winningColour = pickColour();
+  displayColour.textContent = winningColour;
+  for (let i = 0; i < squares.length; i++){
+    squares[i].style.backgroundColor = colours[i];
+    squares[i].style.display = "";
+  }
+
+  h1.style.backgroundColor = "#232323";
+  message.textContent = "";
 })
 
 resetButton.addEventListener("click", function(){
-  colours = generateRandomColours(6);
+  colours = generateRandomColours(numberOfSquares);
   winningColour = pickColour();
   displayColour.textContent = winningColour;
   for (let i = 0; i < squares.length; i++){
