@@ -5,8 +5,20 @@ let displayColour = document.getElementById('displayColour');
 const message = document.getElementById('message');
 const h1 = document.querySelector('h1');
 const resetButton = document.getElementById('reset');
+let easyButton = document.querySelector("#easyButton");
+let hardButton = document.querySelector("#hardButton");
 
 displayColour.textContent = winningColour;
+
+easyButton.addEventListener("click", function(){
+  hardButton.classList.remove("selected");
+  this.classList.add("selected");
+})
+
+hardButton.addEventListener("click", function(){
+  easyButton.classList.remove("selected");
+  this.classList.add("selected");
+})
 
 resetButton.addEventListener("click", function(){
   colours = generateRandomColours(6);
