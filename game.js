@@ -19,10 +19,17 @@ for (let i = 0; i < squares.length; i++) {
     // compare the colour to the chosen colour
     if(clickedColour === winningColour){
       message.textContent = "Correct";
+      changeAllSquaresToWinningColour(winningColour);
     } else {
       message.textContent = "Try Again";
       this.style.backgroundColor = "#232323";
     }
 
   })
+}
+
+function changeAllSquaresToWinningColour(colour) {
+  for (var i = squares.length - 1; i >= 0; i--) {
+    squares[i].style.backgroundColor = colour;
+  }
 }
