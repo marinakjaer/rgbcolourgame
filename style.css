@@ -64,10 +64,10 @@ button:focus{
 }
 
 #stripe {
-  color: black;
   background-color: white;
   height: 30px;
   text-align: center;
+  color: steelblue;
 }
 
 .selected {
