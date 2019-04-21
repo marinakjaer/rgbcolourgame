@@ -25,7 +25,7 @@ easyButton.addEventListener("click", function(){
       squares[i].style.display = "none";
     }
   }
-   h1.style.backgroundColor = "#232323";
+   h1.style.backgroundColor = "steelblue";
   message.textContent = "";
 })
 
@@ -41,7 +41,7 @@ hardButton.addEventListener("click", function(){
     squares[i].style.display = "";
   }
 
-  h1.style.backgroundColor = "#232323";
+  h1.style.backgroundColor = "steelblue";
   message.textContent = "";
 })
 
@@ -52,7 +52,7 @@ resetButton.addEventListener("click", function(){
   for (let i = 0; i < squares.length; i++){
     squares[i].style.backgroundColor = colours[i];
   }
-  h1.style.backgroundColor = "#232323";
+  h1.style.backgroundColor = "steelblue";
   message.textContent = "";
 })
 
