@@ -14,3 +14,7 @@ body{
   max-width: 600px;
   margin: 0 auto;
 }
+
+h1 {
+  color:  white;
+}
